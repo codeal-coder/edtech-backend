@@ -15,7 +15,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 const PORT = process.env.PORT || 4000;
-
+// origin:"http://localhost:3000"
 //database connect
 database.connect();
 //middlewares
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin:"http://localhost:3000",
+		origin:"https://edtech-frontend-lake.vercel.app/", 
 		credentials:true,
 	})
 )
@@ -53,7 +53,7 @@ app.get("/", (req, res) => {
 	});
 });
 
-app.listen(PORT, () => {
-	console.log(`App is running at ${PORT}`)
-})
-
+// app.listen(PORT, () => {
+// 	console.log(`App is running at ${PORT}`)
+// })
+module.exports = app
