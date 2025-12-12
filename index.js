@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin:"https://edtech-frontend-lake.vercel.app/", 
+		origin:"http://localhost:3000", 
 		credentials:true,
 	})
 )
@@ -53,7 +53,7 @@ app.get("/", (req, res) => {
 	});
 });
 
-// app.listen(PORT, () => {
-// 	console.log(`App is running at ${PORT}`)
-// })
-module.exports = app
+app.listen(PORT, () => {
+	console.log(`App is running at ${PORT}`)
+})
+
